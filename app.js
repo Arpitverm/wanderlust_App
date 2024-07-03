@@ -111,7 +111,10 @@ res.render("listings/profile.ejs",{user,listings});
 });
 app.get("/messages",isLoggedIn,async(req,res)=>{
   res.send("NO Message Yet!"); 
-})
+});
+app.get("/",(req,res)=>{
+  res.redirect("/listings");
+});
 app.use("/listings",listingRouter);
 
 app.use("/listings/:id/reviews",reviewRouter);
